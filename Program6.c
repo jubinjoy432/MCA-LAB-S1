@@ -1,5 +1,5 @@
 /*Program to display the elements of an array using recursion
-@Jubin Joy 27/07.2025*/
+@Jubin Joy 23/07/2025 */
 
 #include<stdio.h>
 void disp(int a[],int n) //function to display all the elements in the array using recursion
