@@ -1,7 +1,7 @@
 /*Program to search all the occurence of an element in an integer array
 @Jubin Joy 23/07/2025*/
 #include<stdio.h>
-void search(int a[],int n,int val)
+void search(int a[],int n,int val) //function to search and print positions of an element
 {
 	int i,flag=1;
 	printf("%d is found at locations:");

@@ -2,14 +2,14 @@
 @Jubin Joy 27/07.2025*/
 
 #include<stdio.h>
-void disp(int a[],int n)
+void disp(int a[],int n) //function to display all the elements in the array using recursion
 {
 	if(n!=0)
 		disp(a,n-1);
 	printf("%d ",a[n]);
 	
 }
-void read(int a[],int n)
+void read(int a[],int n) //function to insert elements into the array
 {
 	int i;
 	printf("Enter the elements:");

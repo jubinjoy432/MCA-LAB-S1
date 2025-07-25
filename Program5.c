@@ -1,7 +1,7 @@
 /*To sort the elements in an array in ascending order
 @Jubin Joy 27/03/2025*/
 #include<stdio.h>
-void read(int a[],int n)
+void read(int a[],int n) //function to insert elements into the array
 {
 	int i;
 	printf("Enter the elements:");
@@ -10,7 +10,7 @@ void read(int a[],int n)
 		scanf("%d",&a[i]);
 	}
 }
-void sort(int a[],int n)
+void sort(int a[],int n) //function to sort the elements in the array in ascending order using bubble sort
 {
 	int i,j,temp;
 	for(i=0;i<n;i++)
@@ -26,7 +26,7 @@ void sort(int a[],int n)
 		}
 	}
 }
-void disp(int a[],int n)
+void disp(int a[],int n) //function to display all the elements in the array
 {
 	int i;
 	for(i=0;i<n;i++)

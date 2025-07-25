@@ -1,5 +1,8 @@
+/*program to insert, search, delete and sort elements in an array using functions and only local variables
+@Jubin Joy 16/07/2025 */
+
 #include<stdio.h>
-void insert(int n,int a[],int *pos)
+void insert(int n,int a[],int *pos) //function to insert elements into the array
 {
 	if((*pos)+1==5)
 	{
@@ -10,7 +13,7 @@ void insert(int n,int a[],int *pos)
 		a[++(*pos)]=n;
 	}
 }
-void search(int s,int a[],int *pos)
+void search(int s,int a[],int *pos) //function to search for an element in the array
 {
 	int flag=0,i;
 	for(i=0;i<=(*pos);i++)
@@ -30,7 +33,7 @@ void search(int s,int a[],int *pos)
 		printf("Element not found");
 	}
 }
-void del(int a[],int *pos)
+void del(int a[],int *pos) //function to delete an element from the array
 {
 	if(*pos==-1)
 	{
@@ -41,7 +44,7 @@ void del(int a[],int *pos)
 		printf("\n Deleted :%d",a[(*pos)--]);
     }
 }
-void display(int a[],int *pos)
+void display(int a[],int *pos) //function to display all the elements in the array
 {
 	int i;
 	for(i=0;i<=(*pos);i++)
@@ -49,7 +52,7 @@ void display(int a[],int *pos)
 		printf("%d ",a[i]);
 	}
 }
-void sort(int a[],int *pos)
+void sort(int a[],int *pos) //function to sort the elements in the array in ascending order using bubble sort
 {
 	int temp,i,j;
 	for(i=0;i<=(*pos);i++)
@@ -66,14 +69,14 @@ void sort(int a[],int *pos)
 	}
 	display(a,pos);
 }
-int menu()
+int menu() //function to display the menu
 {
 	int ch;
 	printf("\n 1.INSERT \n 2.DELETE \n 3.SEARCH \n 4.SORT \n 5.Display \n 6.EXIT \n Enter Your Choice:");
 	scanf("%d",&ch);
 	return ch;
 }
-void process(int a[],int *pos)
+void process(int a[],int *pos) //function to invoke the functions based on the choice made by the user
 {
 	int ch,n;
 	for(ch=menu();ch!=6;ch=menu())
