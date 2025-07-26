@@ -1,4 +1,4 @@
-/*To sort the elements in an array in ascending order
+/*Program to sort the elements in an array in ascending order
 @Jubin Joy 23/07/2025 */
 #include<stdio.h>
 void read(int a[],int n) //function to insert elements into the array

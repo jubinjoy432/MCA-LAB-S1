@@ -1,4 +1,4 @@
-/*program to insert, search, delete and sort elements in an array using functions and only local variables
+/*Program to insert, search, delete and sort elements in an array using functions and only local variables
 @Jubin Joy 16/07/2025 */
 
 #include<stdio.h>

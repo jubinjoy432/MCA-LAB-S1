@@ -1,4 +1,4 @@
-/*program to implement stack operations using arrays
+/*Program to implement stack operations using arrays
 @Jubin Joy 26/07/2025 */
 #include<stdio.h>
 int a[5],top=-1;
