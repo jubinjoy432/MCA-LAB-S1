@@ -1,5 +1,5 @@
 /* Program to find the transpose of a matrix
-   @Jubin Joy 25/07/2025 */
+   @Jubin Joy 35 25/07/2025 */
 
 #include <stdio.h>
 void read(int m[][10],int r,int c) // function to input elements of the matrix

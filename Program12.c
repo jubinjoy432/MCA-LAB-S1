@@ -1,5 +1,5 @@
 /*Program to implement stack operations using arrays
-@Jubin Joy 26/07/2025 */
+@Jubin Joy 35 26/07/2025 */
 #include<stdio.h>
 int a[5],top=-1;
 void push(int n) //function to push an element onto the stack

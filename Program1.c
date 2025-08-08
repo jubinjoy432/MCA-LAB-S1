@@ -1,5 +1,5 @@
 /*Program to demonstrate the use of storage classes (local variable, global variable, static variable, register variable)
-@Jubin Joy 16/07/2025*/
+@Jubin Joy 35 16/07/2025*/
 
 #include<stdio.h>
 int a=5;//global

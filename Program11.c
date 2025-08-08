@@ -1,5 +1,5 @@
 /* Program to find the Determinant of a Matrix (2x2 and 3x3)
-   @Jubin Joy 26/07/2025 */
+   @Jubin Joy 35 26/07/2025 */
 
 #include <stdio.h>
 

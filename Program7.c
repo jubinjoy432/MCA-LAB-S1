@@ -1,5 +1,5 @@
 /*Program to display the elements of an array in reverse order order using recursion
-@Jubin Joy 25/07/2025 */
+@Jubin Joy 35 25/07/2025 */
 
 #include<stdio.h>
 void disp(int a[],int n,int i) //function to display all the elements in the array in reverse order using recursion

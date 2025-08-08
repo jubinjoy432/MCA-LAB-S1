@@ -1,7 +1,8 @@
 /*Program to convert an expression from infix expression to prefix using stack
-@Jubin Joy 01/08/2025 */
+@Jubin Joy 35 01/08/2025 */
 
 #include<stdio.h>
+#include<string.h>
 char stack[20],b[20],top=-1,pf[20],ptop=-1;
 void push(char n) //function to push an element onto the stack
 {
@@ -19,10 +20,29 @@ void pop() //function to pop the top element from the stack
 	if(top==-1)
 	{
 		printf("Error:Stack is empty\n");
+		 return;
     }
 	else
 	{
 		pf[++ptop]=stack[top--];	
+    }
+}
+void reverse(char s[])// function to reverse the string and swap ")" with "("and vice versa
+{
+	int len=strlen(s);
+    int i;
+    char temp;
+    for(i=0;i<len/2;i++)
+    {
+        temp=s[i];
+        s[i]=s[len-1-i];
+        s[len-1-i]=temp;
+    }
+    for (i = 0; i < len; i++) {
+        if (s[i] == '(')
+            s[i] = ')';
+        else if (s[i] == ')')
+            s[i] = '(';
     }
 }
 void pushpres(int i)//function to pop higher priority operators before pushing lower priority operator
@@ -44,7 +64,7 @@ void pushpres(int i)//function to pop higher priority operators before pushing l
 void prefix()//function to convert from infix to postfix
 {
  int i;
- strrev(b);
+ reverse(b);
  for(i=0;b[i]!='\0';i++)
  {
  	if(b[i]>='0'&&b[i]<='9'||b[i]>='A'&&b[i]<='Z'||b[i]>='a'&&b[i]<='z')
@@ -76,7 +96,7 @@ void prefix()//function to convert from infix to postfix
  {
  	pop();
  }
- strrev(pf);
+ reverse(pf);
 }
 
 int main()
