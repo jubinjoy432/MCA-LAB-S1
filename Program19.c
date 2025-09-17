@@ -1,3 +1,7 @@
+/*Program to evaluate an infix expression using stack
+@Jubin Joy 
+RollNo 35 
+01/08/2025 */
 #include<stdio.h>
 #include<ctype.h>
 int precedence(char op)

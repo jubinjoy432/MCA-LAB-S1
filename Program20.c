@@ -1,4 +1,4 @@
-/*Program to convert an expression from infix expression to postfix using stack
+/*Program to evaluate an expression using stack by converting it into postfix before evaluating
 @Jubin Joy 
 Roll No 35 
 01/08/2025 */
@@ -24,7 +24,7 @@ void pop() //function to pop the top element from the stack
     }
 	else
 	{
-		pf[++ptop]=stack[top--];	
+		pf[++ptop]=stack[top--];
     }
 }
 void pushpres(int i)//function to pop higher priority operators before pushing lower priority operator
@@ -48,7 +48,7 @@ void postfix()//function to convert from infix to postfix
  int i;
  for(i=0;b[i]!='\0';i++)
  {
- 	if(b[i]>='0'&&b[i]<='9'||b[i]>='A'&&b[i]<='Z'||b[i]>='a'&&b[i]<='z')
+ 	if(b[i]>='0'&&b[i]<='9')
  	{
  		pf[++ptop]=b[i];
 	}
@@ -78,6 +78,40 @@ void postfix()//function to convert from infix to postfix
  	pop();
  }
 }
+void evaluate()//function to evaluate the postfix expression
+{
+    int i,vstack[20],vtop=-1,v1,v2;
+    char sign;
+    for(i=0;i<=ptop;i++)
+    {
+        if(pf[i]>='0'&&pf[i]<='9')
+        {
+            vstack[++vtop]=pf[i]-'0';
+        }
+        else
+        {
+            v2=vstack[vtop--];
+            v1=vstack[vtop--];
+            sign=pf[i];
+            switch(sign)
+            {
+                case '+':
+                    vstack[++vtop]=v1+v2;
+                    break;
+                case '-':
+                    vstack[++vtop]=v1-v2;
+                    break;
+                case '*':
+                    vstack[++vtop]=v1*v2;
+                    break;
+                case '/':
+                    vstack[++vtop]=v1/v2;
+                    break;		
+            }
+        }
+    }
+    printf("The evaluated result is:%d",vstack[vtop]);
+}
 
 int main()
 {
@@ -88,6 +122,8 @@ int main()
 	postfix();
 	printf("The postfix expression:\n");
 	puts(pf);
+    evaluate();
 	return 0;
 }
+
 
