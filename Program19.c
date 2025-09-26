@@ -1,10 +1,10 @@
 /*Program to evaluate an infix expression using stack
 @Jubin Joy 
 RollNo 35 
-01/08/2025 */
+10/09/2025 */
 #include<stdio.h>
 #include<ctype.h>
-int precedence(char op)
+int precedence(char op)//function to return precedence of operators
 {
 switch(op)
 {
@@ -16,7 +16,7 @@ case '-':
 return 0;
 }
 }
-int apply(int a,int b,char sign)
+int apply(int a,int b,char sign)//function to apply the operator on two operands
 {
 switch(sign)
 {
@@ -33,42 +33,49 @@ case '/':
 return a/b;
 }
 }
-int infix_evaluate(char a[100])
+int infix_evaluate(char a[100])//function to evaluate infix expression
 {
-int i=0,vstack[100],vtop=-1,otop=-1;
-char opstack[100],token,sign;
-int v1,v2;
-while(a[i])
-{
-token=a[i];
-if(isdigit(token))
-{
-vstack[++vtop]=token-'0';
-}
-else
-{
-while(otop>-1 && precedence(opstack[otop])>=precedence(token) )
-{
-v2=vstack[vtop--];
-v1=vstack[vtop--];
-sign=opstack[otop--];
-vstack[++vtop]=apply(v1,v2,sign);
 
-}
-opstack[++otop]=token;
-}
-i++;
-}
+    int i = 0, vstack[100], vtop = -1, otop = -1;
+    char opstack[100], sign;
+    int v1, v2;
+    int number = 0; // New variable to store the parsed number
 
-while(otop>-1)
-{
-v2=vstack[vtop--];
-v1=vstack[vtop--];
-sign=opstack[otop--];
-vstack[++vtop]=apply(v1,v2,sign);
+    while (a[i] != '\0')
+    {
+        if (isdigit(a[i]))
+        {
+            number = 0;
+            while (isdigit(a[i]))
+            {
+                number = number * 10 + (a[i] - '0');
+                i++;
+            }
+            vstack[++vtop] = number;
+            continue; // Go to the next character in the outer loop
+        }
+        else if (a[i] == '+' || a[i] == '-' || a[i] == '*' || a[i] == '/')
+        {
+            while (otop != -1 && precedence(opstack[otop]) >= precedence(a[i]))
+            {
+                v2 = vstack[vtop--];
+                v1 = vstack[vtop--];
+                sign = opstack[otop--];
+                vstack[++vtop] = apply(v1, v2, sign);
+            }
+            opstack[++otop] = a[i];
+        }
+        i++;
+    }
 
-}
-return vstack[0];
+    while (otop != -1)
+    {
+        v2 = vstack[vtop--];
+        v1 = vstack[vtop--];
+        sign = opstack[otop--];
+        vstack[++vtop] = apply(v1, v2, sign);
+    }
+    return vstack[0];
 }
 int main()
 {
@@ -80,3 +87,5 @@ result=infix_evaluate(a);
 printf("RESULT:%d",result);
 return 0;
 }
+
+

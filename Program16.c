@@ -1,5 +1,5 @@
 /* Program to reverse a string using Stack
-   @Jubin Joy 35 27/02/2025 */
+   @Jubin Joy 35 27/07/2025 */
 
 #include<stdio.h>
 char stack[50];

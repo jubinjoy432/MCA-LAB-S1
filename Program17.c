@@ -4,6 +4,7 @@ Roll No 35
 01/08/2025 */
 
 #include<stdio.h>
+#include<ctype.h>
 char stack[20],b[20],top=-1,pf[20],ptop=-1;
 void push(char n) //function to push an element onto the stack
 {
@@ -48,7 +49,7 @@ void postfix()//function to convert from infix to postfix
  int i;
  for(i=0;b[i]!='\0';i++)
  {
- 	if(b[i]>='0'&&b[i]<='9'||b[i]>='A'&&b[i]<='Z'||b[i]>='a'&&b[i]<='z')
+ 	if(isalnum(b[i]))
  	{
  		pf[++ptop]=b[i];
 	}
